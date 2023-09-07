@@ -7,6 +7,7 @@ public class Personnage {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Attributs">
     // TODO : Mettre vos attributs ici
+    allo
     // </editor-fold>
 
     // **************************************************************************
