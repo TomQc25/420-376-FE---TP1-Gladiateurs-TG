@@ -84,7 +84,6 @@ public class Personnage {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
     public void afficherInfosPersonnage() {
-        // TODO : Afficher les infos du personnage, tel que montré dans l'énoncé
         System.out.println("");
         System.out.println(nom);
         System.out.println("    Attaque : " + valeurMaxAttaque);
