@@ -8,11 +8,11 @@ public class Personnage {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Attributs">
-        String nom;
-        int pointsDeVie;
-        int valeurMaxAttaque;
-        int valeurDefense;
-        int initiative;
+    String nom;
+    int pointsDeVie;
+    int valeurMaxAttaque;
+    int valeurDefense;
+    int initiative;
     // </editor-fold>
 
     // **************************************************************************
@@ -40,7 +40,7 @@ public class Personnage {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
-    public String getNom() {    
+    public String getNom() {
         return nom;
         // TODO : Afficher les infos du personnage, tel que montré dans l'énoncé
     }
@@ -80,6 +80,7 @@ public class Personnage {
     public void setInitiative(int initiative) {
         this.initiative = initiative;
     }
+
     // </editor-fold>
     // **************************************************************************
     // **************************************************************************
@@ -92,10 +93,9 @@ public class Personnage {
         System.out.println("    Défense : " + valeurDefense);
         System.out.println("    Points de vie : " + pointsDeVie);
         System.out.println("    Initiative : " + initiative);
-        if (pointsDeVie <=0) {
+        if (pointsDeVie <= 0) {
             System.out.println("    Statut : Mort");
-        }
-        else {
+        } else {
             System.out.println("    Statut : Vivant");
         }
     }
@@ -112,21 +112,21 @@ public class Personnage {
         int forceDeFrappe;
         int valeurDefense;
         int dommages;
-        
+
         forceDeFrappe = attaqueCalcul();
         valeurDefense = personnageCible.valeurDefense;
         dommages = forceDeFrappe - valeurDefense;
-        
+
         if (dommages < 0) {
             dommages = 0;
         }
-        
+
         personnageCible.pointsDeVie -= dommages;
-        
+
         if (personnageCible.pointsDeVie < 0) {
             personnageCible.pointsDeVie = 0;
         }
-        
+
         System.out.println();
         System.out.println(nom + " attaque avec une puissance de : " + forceDeFrappe);
         System.out.println(personnageCible.nom + " a une défense de : " + valeurDefense);

@@ -5,7 +5,7 @@ import combat.CompteurDeTour;
 import combat.AffichageEcran;
 
 public class JeuGladiateurs {
-
+    
     public static void main(String[] args) {
 
         // **************************************************************************
@@ -25,7 +25,7 @@ public class JeuGladiateurs {
         Bob.afficherInfosPersonnage();
         Igor.afficherInfosPersonnage();
         affichage.afficherDebutCombat();
-
+        
         for (int i = 0; i < 40; i++) {
             if (Bob.getPointsDeVie() == 0 || Igor.getPointsDeVie() == 0) {
                 break;
@@ -48,7 +48,7 @@ public class JeuGladiateurs {
                 affichage.afficherSeparateurDeTour();
             }
         }
-
+        affichage.afficheVictoire(Bob, Igor);
         // </editor-fold>
         // **************************************************************************
         // **************************************************************************
@@ -58,5 +58,5 @@ public class JeuGladiateurs {
         // TODO : Après la boucle, afficher le résultat du combat
         // </editor-fold>
     }
-
+    
 }
