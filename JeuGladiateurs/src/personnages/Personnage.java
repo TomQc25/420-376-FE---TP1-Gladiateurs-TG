@@ -42,7 +42,6 @@ public class Personnage {
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
     public String getNom() {
         return nom;
-        // TODO : Afficher les infos du personnage, tel que montré dans l'énoncé
     }
 
     public int getPointsDeVie() {
