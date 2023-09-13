@@ -32,7 +32,7 @@ public class JeuGladiateurs {
         // **************************************************************************
         // **************************************************************************
         // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
-        for (int i = 0; i < 40; i++) {
+        for (int i = 1; i < 40; i++) {
             if (Bob.getPointsDeVie() == 0 || Igor.getPointsDeVie() == 0) {
                 break;
             } else {

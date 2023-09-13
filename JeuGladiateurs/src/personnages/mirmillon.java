@@ -45,6 +45,20 @@ public class mirmillon extends Personnage {
         int maxValue = 30 + 1;
         initiative = rand.nextInt(maxValue - minValue) + minValue;
     }
+    
+    @Override
+    public void frapperPersonnage(Personnage personnageCible) {
+        for (int i = 1; i <= 2; i++) {
+            super.frapperPersonnage(personnageCible);
+            if (personnageCible.getPointsDeVie() == 0) {
+               System.out.println(nom + " décapite " + personnageCible.getNom());
+               break;
+            }
+            else {
+                System.out.println(nom + " frappe de nouveau");
+            }
+        }
+    }
     //</editor-fold>
 
     //*****************************************
