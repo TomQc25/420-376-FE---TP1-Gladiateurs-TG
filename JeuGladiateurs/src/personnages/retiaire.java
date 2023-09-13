@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package personnages;
 
 /**
@@ -10,6 +9,7 @@ package personnages;
  * @author Thomas Garant
  */
 public class retiaire extends Personnage {
+
     // ****************************************
     // <editor-fold desc="ATTRIBUTS">
     String classe;
@@ -18,10 +18,10 @@ public class retiaire extends Personnage {
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="CONSTRUCTEURS et INITIALISATION">
     public retiaire(String nom, int attaqueMax, int defense, int pvs, int ini, String classe) {
-      super(nom, attaqueMax, defense, pvs, ini);
-      this.classe = classe;
+        super(nom, attaqueMax, defense, pvs, ini);
+        this.classe = classe;
     }
-    
+
     public retiaire() {
         super();
         this.classe = "";
@@ -32,8 +32,8 @@ public class retiaire extends Personnage {
     //<editor-fold desc="MÉTHODES">
     @Override
     public void afficherInfosPersonnage() {
-       super.afficherInfosPersonnage();
-       System.out.println("    Classe : " + classe);
+        super.afficherInfosPersonnage();
+        System.out.println("    Classe : " + classe);
     }
     //</editor-fold>
 
@@ -42,7 +42,7 @@ public class retiaire extends Personnage {
     public String getClasse() {
         return classe;
     }
-    
+
     public void setClasse(String classe) {
         this.classe = classe;
     }
