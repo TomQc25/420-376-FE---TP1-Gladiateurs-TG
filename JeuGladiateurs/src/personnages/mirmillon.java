@@ -19,9 +19,9 @@ public class mirmillon extends Personnage {
 
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="CONSTRUCTEURS et INITIALISATION">
-    public mirmillon(String nom, int attaqueMax, int defense, int pvs, int ini, String classe) {
+    public mirmillon(String nom, int attaqueMax, int defense, int pvs, int ini) {
         super(nom, attaqueMax, defense, pvs, ini);
-        this.classe = classe;
+        classe = "mirmillon";
     }
 
     public mirmillon() {

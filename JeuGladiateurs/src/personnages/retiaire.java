@@ -13,18 +13,21 @@ public class retiaire extends Personnage {
     // ****************************************
     // <editor-fold desc="ATTRIBUTS">
     String classe;
+    boolean filet;
     // </editor-fold>
 
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="CONSTRUCTEURS et INITIALISATION">
-    public retiaire(String nom, int attaqueMax, int defense, int pvs, int ini, String classe) {
+    public retiaire(String nom, int attaqueMax, int defense, int pvs, int ini) {
         super(nom, attaqueMax, defense, pvs, ini);
-        this.classe = classe;
+        classe = "retiaire";
+        filet = true;
     }
 
     public retiaire() {
         super();
-        this.classe = "";
+        classe = "";
+        filet = true;
     }
     //</editor-fold>
 
@@ -35,8 +38,13 @@ public class retiaire extends Personnage {
         super.afficherInfosPersonnage();
         System.out.println("    Classe : " + classe);
     }
-    //</editor-fold>
 
+    @Override
+    public void frapperPersonnage(Personnage personnageCible) {
+        super.frapperPersonnage(personnageCible);
+    }
+
+    //</editor-fold>
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="GETTERS et SETTERS">
     public String getClasse() {
@@ -46,5 +54,15 @@ public class retiaire extends Personnage {
     public void setClasse(String classe) {
         this.classe = classe;
     }
+    
+    public boolean isFilet() {
+        return filet;
+    }
+    
+    public void setFilet(boolean filet) {
+        this.filet = filet;
+    }
     //</editor-fold>
+
+    
 }
