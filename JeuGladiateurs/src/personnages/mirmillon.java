@@ -5,6 +5,8 @@
 
 package personnages;
 
+import java.util.Random;
+
 /**
  *
  * @author Thomas Garant
@@ -34,6 +36,14 @@ public class mirmillon extends Personnage {
     public void afficherInfosPersonnage() {
        super.afficherInfosPersonnage();
        System.out.println("    Classe : " + classe);
+    }
+    
+    @Override
+    public void setNewInitiativeRandom() {
+        Random rand = new Random();
+        int minValue = 0;
+        int maxValue = 30 + 1;
+        initiative = rand.nextInt(maxValue - minValue) + minValue;
     }
     //</editor-fold>
 
