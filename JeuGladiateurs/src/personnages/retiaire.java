@@ -4,6 +4,8 @@
  */
 package personnages;
 
+import java.util.Random;
+
 /**
  *
  * @author Thomas Garant
@@ -20,7 +22,7 @@ public class retiaire extends Personnage {
     //<editor-fold defaultstate="collapsed" desc="CONSTRUCTEURS et INITIALISATION">
     public retiaire(String nom, int attaqueMax, int defense, int pvs, int ini) {
         super(nom, attaqueMax, defense, pvs, ini);
-        classe = "retiaire";
+        classe = "Retiaire";
         filet = true;
     }
 
@@ -41,7 +43,27 @@ public class retiaire extends Personnage {
 
     @Override
     public void frapperPersonnage(Personnage personnageCible) {
-        super.frapperPersonnage(personnageCible);
+        if (isFilet() == true) {
+            System.out.println();
+            System.out.println(nom + " lance son filet");
+            Random rand = new Random();
+            int nombreAleatoire;
+            int minValue = 1;
+            int maxValue = 10 + 1;
+            nombreAleatoire = rand.nextInt(maxValue - minValue) + minValue;
+            if (nombreAleatoire == 5) {
+                personnageCible.pointsDeVie = 0;
+                System.out.println("Son filet attrape " + personnageCible.getNom() + " et il l'empale sauvagement avec sa lance");
+            } else {
+                System.out.println("Le filet n'atteint pas sa cible");
+                filet = false;
+            }
+        } else {
+            System.out.println();
+            System.out.println(nom + " ramasse son filet et en profite pour attaquer");
+            filet = true;
+            super.frapperPersonnage(personnageCible);
+        }
     }
 
     //</editor-fold>
@@ -54,15 +76,14 @@ public class retiaire extends Personnage {
     public void setClasse(String classe) {
         this.classe = classe;
     }
-    
+
     public boolean isFilet() {
         return filet;
     }
-    
+
     public void setFilet(boolean filet) {
         this.filet = filet;
     }
     //</editor-fold>
 
-    
 }
