@@ -41,8 +41,14 @@ public class JeuGladiateurs {
                     if (j == Bob.getInitiative()) {
                         Bob.frapperPersonnage(Igor);
                     }
+                    if (Igor.getPointsDeVie() == 0) {
+                        break;
+                    }
                     if (j == Igor.getInitiative()) {
                         Igor.frapperPersonnage(Bob);
+                    }
+                    if (Bob.getPointsDeVie() == 0) {
+                        break;
                     }
                 }
                 affichage.afficherSeparateurInfosPerso();
