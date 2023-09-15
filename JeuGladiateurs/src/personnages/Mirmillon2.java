@@ -10,26 +10,23 @@ import java.util.Random;
  *
  * @author Thomas Garant
  */
-public class Retiaire extends Personnage {
+public class Mirmillon2 extends Personnage {
 
     // ****************************************
     // <editor-fold desc="ATTRIBUTS">
     String classe;
-    boolean filet;
     // </editor-fold>
 
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="CONSTRUCTEURS et INITIALISATION">
-    public Retiaire(String nom, int attaqueMax, int defense, int pvs, int ini) {
+    public Mirmillon2(String nom, int attaqueMax, int defense, int pvs, int ini) {
         super(nom, attaqueMax, defense, pvs, ini);
-        classe = "Retiaire";
-        filet = true;
+        classe = "Mirmillon";
     }
 
-    public Retiaire() {
+    public Mirmillon2() {
         super();
-        classe = "";
-        filet = true;
+        this.classe = "";
     }
     //</editor-fold>
 
@@ -42,31 +39,31 @@ public class Retiaire extends Personnage {
     }
 
     @Override
-    public void frapperPersonnage(Personnage personnageCible) {
-        if (isFilet() == true) {
-            System.out.println();
-            System.out.println(nom + " lance son filet");
-            Random rand = new Random();
-            int nombreAleatoire;
-            int minValue = 1;
-            int maxValue = 10 + 1;
-            nombreAleatoire = rand.nextInt(maxValue - minValue) + minValue;
-            if (nombreAleatoire == 5) {
-                personnageCible.pointsDeVie = 0;
-                System.out.println("Son filet attrape " + personnageCible.getNom() + " et il l'empale sauvagement avec sa lance");
-            } else {
-                System.out.println("Le filet n'atteint pas sa cible");
-                filet = false;
-            }
-        } else {
-            System.out.println();
-            System.out.println(nom + " ramasse son filet et en profite pour attaquer");
-            filet = true;
-            super.frapperPersonnage(personnageCible);
-        }
+    public void setNewInitiativeRandom() {
+        Random rand = new Random();
+        int minValue = 0;
+        int maxValue = 30 + 1;
+        initiative = rand.nextInt(maxValue - minValue) + minValue;
     }
 
+    @Override
+    public void frapperPersonnage(Personnage personnageCible) {
+        for (int i = 1; i <= 2; i++) {
+            super.frapperPersonnage(personnageCible);
+            if (i == 1) {
+                if (personnageCible.getPointsDeVie() == 0) {
+                    System.out.println();
+                    System.out.println(nom + " décapite " + personnageCible.getNom());
+                    break;
+                } else {
+                    System.out.println();
+                    System.out.println(nom + " frappe de nouveau");
+                }
+            }
+        }
+    }
     //</editor-fold>
+
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="GETTERS et SETTERS">
     public String getClasse() {
@@ -75,14 +72,6 @@ public class Retiaire extends Personnage {
 
     public void setClasse(String classe) {
         this.classe = classe;
-    }
-
-    public boolean isFilet() {
-        return filet;
-    }
-
-    public void setFilet(boolean filet) {
-        this.filet = filet;
     }
     //</editor-fold>
 
