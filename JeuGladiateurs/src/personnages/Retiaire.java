@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * @author Thomas Garant
  */
-public class Retiaire2 extends Personnage {
+public class Retiaire extends Personnage {
 
     // ****************************************
     // <editor-fold desc="ATTRIBUTS">
@@ -20,13 +20,13 @@ public class Retiaire2 extends Personnage {
 
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="CONSTRUCTEURS et INITIALISATION">
-    public Retiaire2(String nom, int attaqueMax, int defense, int pvs, int ini) {
+    public Retiaire(String nom, int attaqueMax, int defense, int pvs, int ini) {
         super(nom, attaqueMax, defense, pvs, ini);
         classe = "Retiaire";
         filet = true;
     }
 
-    public Retiaire2() {
+    public Retiaire() {
         super();
         classe = "";
         filet = true;

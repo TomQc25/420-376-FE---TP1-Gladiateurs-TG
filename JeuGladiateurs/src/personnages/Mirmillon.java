@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * @author Thomas Garant
  */
-public class Mirmillon2 extends Personnage {
+public class Mirmillon extends Personnage {
 
     // ****************************************
     // <editor-fold desc="ATTRIBUTS">
@@ -19,12 +19,12 @@ public class Mirmillon2 extends Personnage {
 
     //*****************************************
     //<editor-fold defaultstate="collapsed" desc="CONSTRUCTEURS et INITIALISATION">
-    public Mirmillon2(String nom, int attaqueMax, int defense, int pvs, int ini) {
+    public Mirmillon(String nom, int attaqueMax, int defense, int pvs, int ini) {
         super(nom, attaqueMax, defense, pvs, ini);
         classe = "Mirmillon";
     }
 
-    public Mirmillon2() {
+    public Mirmillon() {
         super();
         this.classe = "";
     }
